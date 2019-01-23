@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Timetable</string>
+    <string name="submit">Submit</string>
+    <string name="Login">Login</string>
+    <string name="textview">Department</string>
+    <string name="textview2">Year__Sem</string>
+
+    <string name="button">Button</string>
+    <string name="routine">Routine</string>
+    <string name="welcome">Welcome to Routine app. Click on the buttons to continue to desired location.</string>
+
+
+    <string-array name="names">
+        <item>1st 1st part</item>
+        <item>1st 2nd part</item>
+        <item>2nd 1st part</item>
+        <item>2nd 2nd part</item>
+        <item>3rd 1st part</item>
+        <item>3rd 2nd part</item>
+        <item>4th 1st part</item>
+        <item>4th 2nd part</item>
+
+    </string-array>
+
+    <string-array name="sem">
+        <item>Civil</item>
+        <item>Geomatics</item>
+        <item>Computer</item>
+        <item>Electronics</item>
+        <item>Electrical</item>
+        <item>Mechanical</item>
+
+    </string-array>
+</resources>
