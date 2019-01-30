@@ -1,13 +1,31 @@
 package com.jcorp.timetable;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebViewDatabase;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Button;
 public class MainActivity3 extends AppCompatActivity {
+
+    public Button submit;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        submit =(Button)findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this, viewdatabase.class);
+                startActivity(intent);
+            }
+        });
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
