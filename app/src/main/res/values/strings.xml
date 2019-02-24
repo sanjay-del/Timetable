@@ -8,7 +8,6 @@
     <string name="button">Button</string>
     <string name="routine">Routine</string>
     <string name="welcome">Welcome to Routine app. Click on the buttons to continue to desired location.</string>
-    <string name="info">Info</string>
 
 
     <string-array name="names">
