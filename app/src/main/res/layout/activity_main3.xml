@@ -2,80 +2,21 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="191dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="156dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/submit"
-        android:background="@drawable/round_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
-
     <TextView
         android:id="@+id/textView"
-        android:layout_width="137dp"
-        android:layout_height="53dp"
-        android:text="@string/textview"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
-        app:layout_constraintEnd_toEndOf="@+id/spinner2"
-        app:layout_constraintStart_toStartOf="@+id/spinner2"
-        app:layout_constraintTop_toTopOf="@+id/spinner2"
-        tools:text="Department" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="140dp"
-        android:layout_height="49dp"
-        android:text="@string/textview2"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner1"
-        app:layout_constraintEnd_toEndOf="@+id/spinner1"
-        app:layout_constraintStart_toStartOf="@+id/spinner1"
-        app:layout_constraintTop_toTopOf="@+id/spinner1"
-        tools:text="Year__Part" />
-
-
+        android:layout_width="241dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="380dp"
+        android:text="Welcome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
