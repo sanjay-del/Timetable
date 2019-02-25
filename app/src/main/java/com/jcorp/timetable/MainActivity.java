@@ -7,8 +7,11 @@ import android.view.View;
 
 import android.widget.Button;
 
+import com.google.firebase.FirebaseApp;
+
 
 public class MainActivity extends AppCompatActivity {
+
     public Button login;
     public Button routine;
     public void init(){
@@ -38,6 +41,8 @@ public void start(){
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
