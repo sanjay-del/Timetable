@@ -27,12 +27,31 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                //FirebaseUser user = firebaseAuth.getCurrentUser();
+                /*if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    toastMessage("Successfully signed in with: " + user.getEmail());
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                    toastMessage("Successfully signed out.");
+                }
+                // ...*/
+            }
+        };
+
 
         if(firebaseAuth.getCurrentUser() != null){
             finish();
@@ -88,4 +107,21 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
             userLogin();
         }
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        firebaseAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (firebaseAuth != null) {
+            firebaseAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+    private void toastMessage(String message){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
 }
