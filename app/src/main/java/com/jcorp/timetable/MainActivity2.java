@@ -81,7 +81,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        progressDialog.setMessage("Registering Please Wait...");
+        progressDialog.setMessage("--Logging in--");
         progressDialog.show();
 
         //logging in the user
@@ -95,6 +95,10 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                             //start the profile activity
                             finish();
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        }
+                       else{
+                           progressDialog.setMessage("Login failed");
+                           progressDialog.show();
                         }
                     }
                 });
@@ -119,9 +123,6 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         if (firebaseAuth != null) {
             firebaseAuth.removeAuthStateListener(mAuthListener);
         }
-    }
-    private void toastMessage(String message){
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 
 }
