@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button login;
     public Button routine;
+    public Button assignment;
     public void init(){
         login = (Button)findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
@@ -25,6 +26,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public  void assin(){
+        assignment = (Button)findViewById(R.id.assignment);
+        assignment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pop = new Intent(MainActivity.this, Assignment.class);
+                startActivity(pop);
+            }
+        });
     }
 public void start(){
         routine = (Button)findViewById(R.id.routine);
@@ -48,6 +60,7 @@ public void start(){
 
         init();
         start();
+        assin();
 
     }
 
