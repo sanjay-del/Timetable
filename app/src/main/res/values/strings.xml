@@ -10,6 +10,7 @@
     <string name="welcome">Welcome to Routine app. Click on the buttons to continue to desired location.</string>
     <string name="assignment">Assignment</string>
     <string name= "nologin">Login_Failed</string>
+    <string name="view_routine">View Routine</string>
 
 
     <string-array name="names">
