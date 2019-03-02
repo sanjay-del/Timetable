@@ -1,34 +1,39 @@
 package com.jcorp.timetable;
 
 public class Assignmentview {
-    String Assignmentnum, DueDate, SUBJECT;
+   private String assignmentnum, subject, duedate;
 
-    public Assignmentview(){
+    public Assignmentview() {
+    }
 
+    public Assignmentview(String assignmentnum, String subject, String duedate) {
+        this.assignmentnum = assignmentnum;
+        this.subject = subject;
+        this.duedate = duedate;
     }
 
     public String getAssignmentnum() {
-        return Assignmentnum;
+        return assignmentnum;
     }
 
     public void setAssignmentnum(String assignmentnum) {
-        Assignmentnum = assignmentnum;
+        this.assignmentnum = assignmentnum;
     }
 
-    public String getDueDate() {
-        return DueDate;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setDueDate(String dueDate) {
-        DueDate = dueDate;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getSUBJECT() {
-        return SUBJECT;
+    public String getDuedate() {
+        return duedate;
     }
 
-    public void setSUBJECT(String SUBJECT) {
-        this.SUBJECT = SUBJECT;
+    public void setDuedate(String duedate) {
+        this.duedate = duedate;
     }
 }
 

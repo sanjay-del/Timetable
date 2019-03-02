@@ -23,23 +23,39 @@ public class Assignment extends AppCompatActivity {
     private FirebaseDatabase mdatabase;
     //private ArrayList<String>  AssignmentList = new ArrayList<>();
     private ListView listviewAssignment;
-    private ArrayAdapter<String> arrayAdapter;
+    //private ArrayAdapter<String> arrayAdapter;
+    ArrayList<String> list;
+    ArrayAdapter<String> adapter;
+    Assignmentview assdata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assignment);
-        mdatabase = FirebaseDatabase.getInstance();
-        assignmentRef = mdatabase.getReference();
-        //assignmentRef = assignmentRef.child("Assignment");
         listviewAssignment = (ListView) findViewById(R.id.listviewassin);
+        assdata = new Assignmentview();
+        mdatabase = FirebaseDatabase.getInstance();
+        assignmentRef = mdatabase.getReference("AssignmentData");
+        //assignmentRef = assignmentRef.child("Assignment");
+        list = new ArrayList<>();
+        adapter =new ArrayAdapter<String>(this,R.layout.assinfo ,R.id.assinfo, list);
 
 
         assignmentRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    assdata = ds.getValue(Assignmentview.class);
+                    list.add("Subject " + assdata.getSubject().toString() );
+                    list.add("DueDate" + assdata.getDuedate().toString());
+                    list.add("Assignment number" + assdata.getAssignmentnum());
+
+
+                }
+                listviewAssignment.setAdapter(adapter);
+
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                showData(dataSnapshot);
+                //showData(dataSnapshot);
             }
 
             @Override
@@ -50,7 +66,7 @@ public class Assignment extends AppCompatActivity {
 
     }
 
-    private void showData(DataSnapshot dataSnapshot) {
+      /* private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds : dataSnapshot.getChildren()){
             Assignmentview uInfo = new Assignmentview();
             uInfo.setDueDate(ds.child("Assignmentdata").getValue(Assignmentview.class).getDueDate());
@@ -70,6 +86,6 @@ public class Assignment extends AppCompatActivity {
             ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.activity_list_item,array);
             listviewAssignment.setAdapter(adapter);
         }
-    }
+    }*/
 
 }
