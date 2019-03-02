@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
-    <LinearLayout
+
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,19 +13,21 @@
         android:layout_centerVertical="true">
 
 
-        <TextView
-            android:id="@+id/something"
-            android:layout_width="match_parent"
-            android:layout_height="97dp"
-            android:layout_gravity="center_horizontal"
-            android:text="Something" />
+    <TextView
+        android:id="@+id/something"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Something" />
 
         <Button
             android:id="@+id/logout"
             android:layout_width="190dp"
-            android:text="logout"
+            android:layout_alignRight="@+id/something"
+            android:layout_alignBottom="@+id/something"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:text="logout" />
+
 
 </RelativeLayout>

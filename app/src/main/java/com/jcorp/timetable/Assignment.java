@@ -46,8 +46,8 @@ public class Assignment extends AppCompatActivity {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     assdata = ds.getValue(Assignmentview.class);
                     list.add("Subject " + assdata.getSubject().toString() );
-                    list.add("DueDate" + assdata.getDuedate().toString());
-                    list.add("Assignment number" + assdata.getAssignmentnum());
+                    //list.add("DueDate" + assdata.getDuedate().toString());
+                    //list.add("Assignment number" + assdata.getAssignmentnum());
 
 
                 }

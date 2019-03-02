@@ -23,6 +23,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     private Button buttonLogin;
     private TextView userlogin;
     private EditText editTextEmail;
+
     private EditText editTextPassword;
 
     private ProgressDialog progressDialog;
@@ -97,6 +98,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }
                        else{
+
                            progressDialog.setMessage("Login failed");
                            progressDialog.show();
                         }
