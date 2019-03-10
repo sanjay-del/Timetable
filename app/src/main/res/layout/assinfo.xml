@@ -14,21 +14,21 @@
         android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Date" />
     <TextView
         android:id="@+id/assinnum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:text="AssignInfo" />
     <TextView
         android:id="@+id/subj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Subj" />
 

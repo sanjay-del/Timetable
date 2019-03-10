@@ -46,6 +46,9 @@ public class Assignment extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                     Assignmentview as = dataSnapshot1.getValue(Assignmentview.class);
                     list.add(as);
+
+
+
                 }
                 adapter = new MyAdapter(Assignment.this, list);
                 recyclerView.setAdapter(adapter);
