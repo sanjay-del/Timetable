@@ -21,10 +21,10 @@ public class Assignment extends AppCompatActivity {
     private final static String TAG = "Assignment";
     private DatabaseReference assignmentRef;
     private FirebaseDatabase mdatabase;
-    //private ArrayList<String>  AssignmentList = new ArrayList<>();
+    private ArrayList<String>  list = new ArrayList<String>();
     private ListView listviewAssignment;
     //private ArrayAdapter<String> arrayAdapter;
-    ArrayList<String> list;
+   // ArrayList<String> list;
     ArrayAdapter<String> adapter;
     Assignmentview assdata;
     @Override
@@ -34,10 +34,11 @@ public class Assignment extends AppCompatActivity {
         listviewAssignment = (ListView) findViewById(R.id.listviewassin);
         assdata = new Assignmentview();
         mdatabase = FirebaseDatabase.getInstance();
-        assignmentRef = mdatabase.getReference("AssignmentData");
+        assignmentRef = mdatabase.getReference().child("AssignmentData");
         //assignmentRef = assignmentRef.child("Assignment");
-        list = new ArrayList<>();
-        adapter =new ArrayAdapter<String>(this,R.layout.assinfo ,R.id.assinfo, list);
+        list = new ArrayList<String>();
+        adapter =new ArrayAdapter<String>(this,R.layout.assinfo,R.id.assinfo, list);
+        listviewAssignment.setAdapter(adapter);
 
 
         assignmentRef.addValueEventListener(new ValueEventListener() {
@@ -45,7 +46,7 @@ public class Assignment extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     assdata = ds.getValue(Assignmentview.class);
-                    list.add("Subject " + assdata.getSubject().toString() );
+                    list.add("subject " + assdata.getSubject().toString() );
                     //list.add("DueDate" + assdata.getDuedate().toString());
                     //list.add("Assignment number" + assdata.getAssignmentnum());
 

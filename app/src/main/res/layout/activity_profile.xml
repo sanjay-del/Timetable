@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back"
     tools:context=".ProfileActivity">
-
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
 
 
     <TextView
@@ -18,16 +13,66 @@
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:layout_gravity="center_horizontal"
-        android:text="Something" />
+        android:text="Something"
+        android:textColor="@color/welcome" />
 
-        <Button
-            android:id="@+id/logout"
-            android:layout_width="190dp"
-            android:layout_alignRight="@+id/something"
-            android:layout_alignBottom="@+id/something"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="logout" />
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/something"
+        android:layout_alignBottom="@+id/something"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="9dp"
+        android:text="logout" />
 
+    <Button
+        android:id="@+id/updateAssi"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/something"
+        android:layout_alignBottom="@+id/logout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="181dp"
+        android:layout_marginBottom="-210dp"
+        android:text="UpdateAssigment" />
+
+    <ScrollView
+        android:layout_width="392dp"
+        android:layout_height="264dp"
+        android:layout_alignBottom="@+id/something"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="-277dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/asubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="AssignmentSubject" />
+
+            <EditText
+                android:id="@+id/adate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:hint="DueDate"
+                />
+
+            <EditText
+                android:id="@+id/anum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:hint="AssigmentNum" />
+
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
