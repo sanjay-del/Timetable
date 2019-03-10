@@ -1,22 +1,29 @@
 package com.jcorp.timetable;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference myRef;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +54,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         logout = (Button) findViewById(R.id.logout);
         update = (Button) findViewById(R.id.updateAssi);
 
+
+
+
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
+        myRef = mFirebaseDatabase.getReference().child("AssignmentData");
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() == null)
         {
@@ -87,9 +98,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 if (!subject.equals("")&& !duedate.equals("") && !assnum.equals("")) {
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userId = user.getUid();
-                    myRef.child(userId).child("AssignmentData").child(subject).child("subject").setValue("Subject  "+subject);
-                    myRef.child(userId).child("AssignmentData").child(subject).child("duedate").setValue("Duedate  "+duedate);
-                    myRef.child(userId).child("AssignmentData").child(subject).child("assignmentnum").setValue("Assignmentnum  "+assnum);
+                    myRef.child(userId).child(subject).child("subject").setValue("Subject  "+subject);
+                    myRef.child(userId).child(subject).child("duedate").setValue("Duedate  "+duedate);
+                    myRef.child(userId).child(subject).child("assignmentnum").setValue("Assignmentnum  "+assnum);
 
                     Toast.makeText(getApplicationContext(),"Adding items to database...",Toast.LENGTH_SHORT).show();
                     //reset the text
@@ -103,6 +114,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
         logout.setOnClickListener(this);
+
+
 
     }
 
