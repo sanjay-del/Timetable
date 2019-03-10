@@ -87,9 +87,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 if (!subject.equals("")&& !duedate.equals("") && !assnum.equals("")) {
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userId = user.getUid();
-                    myRef.child(userId).child("AssigmnetData").child(subject).child("subject").setValue(subject);
-                    myRef.child(userId).child("AssigmnetData").child(subject).child("duedate").setValue(duedate);
-                    myRef.child(userId).child("AssigmnetData").child(subject).child("assignmentnum").setValue(assnum);
+                    myRef.child(userId).child("AssignmentData").child(subject).child("subject").setValue("Subject  "+subject);
+                    myRef.child(userId).child("AssignmentData").child(subject).child("duedate").setValue("Duedate  "+duedate);
+                    myRef.child(userId).child("AssignmentData").child(subject).child("assignmentnum").setValue("Assignmentnum  "+assnum);
 
                     Toast.makeText(getApplicationContext(),"Adding items to database...",Toast.LENGTH_SHORT).show();
                     //reset the text
