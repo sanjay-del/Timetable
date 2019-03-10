@@ -14,12 +14,15 @@
         android:layout_height="57dp"
         android:layout_gravity="center_horizontal"
         android:text="Something"
+        android:textStyle="bold"
         android:textColor="@color/welcome" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_btn"
+        android:textStyle="bold"
         android:layout_alignRight="@+id/something"
         android:layout_alignBottom="@+id/something"
         android:layout_gravity="center_horizontal"
@@ -27,23 +30,13 @@
         android:layout_marginBottom="9dp"
         android:text="logout" />
 
-    <Button
-        android:id="@+id/updateAssi"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/something"
-        android:layout_alignBottom="@+id/logout"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginRight="181dp"
-        android:layout_marginBottom="-210dp"
-        android:text="UpdateAssigment" />
 
     <ScrollView
-        android:layout_width="392dp"
-        android:layout_height="264dp"
+        android:layout_width="match_parent"
+        android:layout_height="518dp"
         android:layout_alignBottom="@+id/something"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="-277dp">
+        android:layout_marginBottom="-531dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -61,8 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:hint="DueDate"
-                />
+                android:hint="DueDate" />
 
             <EditText
                 android:id="@+id/anum"
@@ -72,7 +64,22 @@
                 android:hint="AssigmentNum" />
 
 
+
         </RelativeLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/updateAssi"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:layout_gravity="center_horizontal"
+
+        android:background="@drawable/round_btn"
+        android:text="UpdateAssigment"
+        android:textStyle="bold" />
+
+
+
 
 </RelativeLayout>
