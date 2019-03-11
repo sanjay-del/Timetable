@@ -62,22 +62,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="90dp"
                 android:hint="AssigmentNum" />
+            <Button
+                android:id="@+id/updateAssi"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:layout_gravity="center_horizontal"
 
+                android:background="@drawable/round_btn"
+                android:text="UpdateAssigment"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Notice"
+                android:layout_marginTop="300dp"/>
+            <Button
+                android:id="@+id/post"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_btn"
+                android:textStyle="bold"
+                android:text="Post"
+                android:layout_marginTop="350dp"/>
 
 
         </RelativeLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/updateAssi"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
-        android:layout_gravity="center_horizontal"
 
-        android:background="@drawable/round_btn"
-        android:text="UpdateAssigment"
-        android:textStyle="bold" />
 
 
 
