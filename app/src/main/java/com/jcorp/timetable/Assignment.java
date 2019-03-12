@@ -39,6 +39,8 @@ public class Assignment extends AppCompatActivity {
         list = new ArrayList<Assignmentview>();
 
         assignmentRef = FirebaseDatabase.getInstance().getReference().child("AssignmentData");
+        //assignmentRef = FirebaseDatabase.getInstance().getReference("AssignmentData");
+
 
         assignmentRef.addValueEventListener(new ValueEventListener() {
             @Override

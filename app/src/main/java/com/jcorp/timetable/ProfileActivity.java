@@ -33,8 +33,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private FirebaseAuth firebaseAuth;
     private TextView something;
     private Button logout;
-    private Button update;
-    private EditText sub,date,num;
+    private Button update,post;
+    private EditText sub,date,num,notice;
 
 
     private FirebaseDatabase mFirebaseDatabase;
@@ -53,13 +53,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         num = (EditText) findViewById(R.id.anum);
         logout = (Button) findViewById(R.id.logout);
         update = (Button) findViewById(R.id.updateAssi);
+        post = (Button) findViewById(R.id.post);
+        notice = (EditText) findViewById(R.id.notice);
 
 
 
 
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference().child("AssignmentData");
+        myRef = mFirebaseDatabase.getReference();
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() == null)
         {
@@ -98,9 +100,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 if (!subject.equals("")&& !duedate.equals("") && !assnum.equals("")) {
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userId = user.getUid();
-                    myRef.child(userId).child(subject).child("subject").setValue("Subject  "+subject);
-                    myRef.child(userId).child(subject).child("duedate").setValue("Duedate  "+duedate);
-                    myRef.child(userId).child(subject).child("assignmentnum").setValue("Assignmentnum  "+assnum);
+                    myRef.child("AssignmentData").child(userId).child(subject).child("subject").setValue("Subject  "+subject);
+                    myRef.child("AssignmentData").child(userId).child(subject).child("duedate").setValue("Duedate  "+duedate);
+                    myRef.child("AssignmentData").child(userId).child(subject).child("assignmentnum").setValue("Assignmentnum  "+assnum);
 
                     Toast.makeText(getApplicationContext(),"Adding items to database...",Toast.LENGTH_SHORT).show();
                     //reset the text
@@ -111,6 +113,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String note = notice.getText().toString();
+                if(!note.equals("")){
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    String userId = user.getUid();
+                    myRef.child("Notice").setValue(note);
+                    Toast.makeText(getApplicationContext(),"Posting Notice",Toast.LENGTH_SHORT).show();
+                    //reset the text
+                    notice.setText("");
+
+                }
+            }
+        });
 
 
         logout.setOnClickListener(this);
